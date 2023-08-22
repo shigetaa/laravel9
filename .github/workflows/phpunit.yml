@@ -5,8 +5,8 @@ on:
   pull_request:
 
 env:
-  DB_USERNAME: sail
-  DB_PASSWORD: password
+  DB_CONNECTION: sqlite
+  DB_DATABASE: database/database.sqlite
   MAIL_FROM_ADDRESS: info@example.com
 
 jobs:
@@ -37,7 +37,4 @@ jobs:
        - name: Set hostname
          run: sudo echo "127.0.0.1 mysql.test" | sudo tee -a /etc/hosts
        - name: Execute tests (Unit and Feature tests) via PHPUnit
-         env:
-           DB_CONNECTION: sqlite
-           DB_DATABASE: database/database.sqlite
          run: vendor/bin/phpunit
