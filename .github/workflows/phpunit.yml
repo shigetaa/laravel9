@@ -38,6 +38,6 @@ jobs:
          run: sudo echo "127.0.0.1 mysql.test" | sudo tee -a /etc/hosts
        - name: Execute tests (Unit and Feature tests) via PHPUnit
          env:
-         DB_CONNECTION: sqlite
-         DB_DATABASE: database/database.sqlite
+           DB_CONNECTION: sqlite
+           DB_DATABASE: database/database.sqlite
          run: vendor/bin/phpunit
